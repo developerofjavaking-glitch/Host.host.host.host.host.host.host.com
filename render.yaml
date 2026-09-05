@@ -1,0 +1,22 @@
+services:
+  - type: worker
+    name: boom-host-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: OWNER_LINK
+        sync: false
+      - key: CHANNEL_LINK
+        sync: false
+      - key: BOT_NAME
+        value: Boom Host Bot
+      - key: REQUIRE_CODE
+        value: "true"
+      - key: ENABLE_KEEPALIVE
+        value: "false"
